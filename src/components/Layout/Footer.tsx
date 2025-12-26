@@ -1,15 +1,12 @@
 import { Heart, Mail, Code2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-export default function Footer({ onNavigate }: FooterProps) {
+export default function Footer() {
   const menuItems = [
-    { id: 'home', label: 'الرئيسية' },
-    { id: 'packages', label: 'الحزم' },
-    { id: 'courses', label: 'الدورسات عربية' },
-    { id: 'articles', label: 'طلب لارافيل' }
+    { path: '/', label: 'الرئيسية' },
+    { path: '/packages', label: 'الحزم' },
+    { path: '/courses', label: 'الدورسات عربية' },
+    { path: '/articles', label: 'طلب لارافيل' }
   ];
 
   return (
@@ -32,13 +29,13 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h3 className="text-white font-bold mb-4">روابط سريعة</h3>
             <ul className="space-y-2">
               {menuItems.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => onNavigate(item.id)}
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
                     className="text-gray-400 hover:text-[#e74c3c] transition-colors text-sm"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

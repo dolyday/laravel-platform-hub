@@ -1,13 +1,10 @@
 import { ArrowLeft, Code, Globe, Shield, CreditCard, Folder, Palette, Lock, Bell } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { packageCategories, articles, statistics } from '../data/mockData';
 import Newsletter from '../components/Newsletter';
 import CounterAnimation from '../components/CounterAnimation';
 import SkeletonLoader from '../components/SkeletonLoader';
-
-interface HomePageProps {
-  onNavigate: (page: string) => void;
-}
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'folder': Folder,
@@ -20,7 +17,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'bell': Bell
 };
 
-export default function HomePage({ onNavigate }: HomePageProps) {
+export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
 
@@ -56,13 +53,13 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             موقعك الرائد لاكتشاف جزم لارافيل، تعلم الدورسات المجانية وقراءة الإبداع عن طريق لارافيل
           </p>
-          <button
-            onClick={() => onNavigate('packages')}
+          <Link
+            to="/packages"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#e74c3c] text-white rounded-lg hover:bg-[#c0392b] transition-all transform hover:scale-105 font-bold"
           >
             <span>استكشف الحزم</span>
             <ArrowLeft className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -81,10 +78,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             packageCategories.map((category, idx) => {
               const IconComponent = getIconComponent(category.icon);
               return (
-                <div
+                <Link
                   key={category.id}
-                  className={`group bg-[#2c3e50] rounded-lg p-6 hover:bg-[#34495e] transition-all duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-xl hover:shadow-[#e74c3c]/20 border-2 border-transparent hover:border-[#e74c3c] transition-all duration-700 delay-${idx * 100} ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                  onClick={() => onNavigate('packages')}
+                  to="/packages"
+                  className={`group bg-[#2c3e50] rounded-lg p-6 hover:bg-[#34495e] transition-all duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-xl hover:shadow-[#e74c3c]/20 border-2 border-transparent hover:border-[#e74c3c] transition-all duration-700 delay-${idx * 100} ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} block`}
                 >
                   <div className="flex justify-center mb-4">
                     <div className={`p-4 rounded-lg bg-${category.color}-500/10`}>
@@ -97,7 +94,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     <span className="text-[#e74c3c] font-bold">{category.packagesCount} حزمة</span>
                     <ArrowLeft className="w-4 h-4 text-[#e74c3c] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                </div>
+                </Link>
               );
             })
           )}
@@ -117,10 +114,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             ))
           ) : (
             articles.slice(0, 3).map((article, idx) => (
-              <div
+              <Link
                 key={article.id}
-                className={`group bg-[#2c3e50] rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:shadow-xl hover:shadow-[#e74c3c]/20 border-2 border-transparent hover:border-[#e74c3c] transition-all duration-700 delay-${(idx + 8) * 100} ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                onClick={() => onNavigate('articles')}
+                to="/articles"
+                className={`group bg-[#2c3e50] rounded-lg overflow-hidden hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:shadow-xl hover:shadow-[#e74c3c]/20 border-2 border-transparent hover:border-[#e74c3c] transition-all duration-700 delay-${(idx + 8) * 100} ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} block`}
               >
                 <div className="h-48 overflow-hidden">
                   <img
@@ -140,7 +137,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     <ArrowLeft className="w-4 h-4 text-[#e74c3c] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))
           )}
         </div>

@@ -164,6 +164,105 @@ export const courses = [
   }
 ];
 
+export const packages = [
+  {
+    id: 1,
+    slug: 'intervention-image',
+    name: 'Intervention Image',
+    name_ar: 'Intervention Image',
+    category: 'إدارة الملفات',
+    image: 'https://images.pexels.com/photos/4709285/pexels-photo-4709285.jpeg',
+    description: 'مكتبة PHP لمعالجة الصور وتحريرها بطريقة سهلة ومرنة مع دعم مكتبات GD و Imagick',
+    github_stars: 14000,
+    downloads: 3000000,
+    composer_package: 'intervention/image'
+  },
+  {
+    id: 2,
+    slug: 'laravel-excel',
+    name: 'Laravel Excel',
+    name_ar: 'Laravel Excel',
+    category: 'إدارة الملفات',
+    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg',
+    description: 'مكتبة Laravel للتعامل مع ملفات Excel. استيراد وتصدير البيانات بسهولة',
+    github_stars: 12000,
+    downloads: 2500000,
+    composer_package: 'maatwebsite/excel'
+  },
+  {
+    id: 3,
+    slug: 'laravel-dompdf',
+    name: 'Laravel DOMPDF',
+    name_ar: 'Laravel DOMPDF',
+    category: 'إدارة الملفات',
+    image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg',
+    description: 'مكتبة Laravel لتحويل صفحات HTML إلى ملفات PDF بسهولة مع دعم اللغة العربية',
+    github_stars: 7000,
+    downloads: 1800000,
+    composer_package: 'barryvdh/laravel-dompdf'
+  },
+  {
+    id: 4,
+    slug: 'laravel-image-optimizer',
+    name: 'Laravel Image Optimizer',
+    name_ar: 'Laravel Image Optimizer',
+    category: 'إدارة الملفات',
+    image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg',
+    description: 'مكتبة لتحسين وضغط الصور تلقائياً في Laravel لتحسين أداء الموقع',
+    github_stars: 1000,
+    downloads: 850000,
+    composer_package: 'spatie/laravel-image-optimizer'
+  },
+  {
+    id: 5,
+    slug: 'flysystem-google-drive',
+    name: 'Flysystem Google Drive',
+    name_ar: 'Flysystem Google Drive',
+    category: 'إدارة الملفات',
+    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg',
+    description: 'مكتبة لربط تطبيق Laravel مع Google Drive للتخزين السحابي',
+    github_stars: 361,
+    downloads: 450000,
+    composer_package: 'nao-pon/flysystem-google-drive'
+  },
+  {
+    id: 6,
+    slug: 'laravel-cashier',
+    name: 'Laravel Cashier',
+    name_ar: 'Laravel Cashier',
+    category: 'المدفوعات',
+    image: 'https://images.pexels.com/photos/6289065/pexels-photo-6289065.jpeg',
+    description: 'واجهة سهلة للتعامل مع اشتراكات Stripe في Laravel',
+    github_stars: 2300,
+    downloads: 1200000,
+    composer_package: 'laravel/cashier'
+  },
+  {
+    id: 7,
+    slug: 'laravel-passport',
+    name: 'Laravel Passport',
+    name_ar: 'Laravel Passport',
+    category: 'المصادقة',
+    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg',
+    description: 'نظام OAuth2 كامل لتطبيقات Laravel API',
+    github_stars: 3200,
+    downloads: 2100000,
+    composer_package: 'laravel/passport'
+  },
+  {
+    id: 8,
+    slug: 'laravel-sanctum',
+    name: 'Laravel Sanctum',
+    name_ar: 'Laravel Sanctum',
+    category: 'المصادقة',
+    image: 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg',
+    description: 'نظام مصادقة خفيف لتطبيقات SPA و API',
+    github_stars: 2800,
+    downloads: 3500000,
+    composer_package: 'laravel/sanctum'
+  }
+];
+
 export const articles = [
   {
     id: 1,
